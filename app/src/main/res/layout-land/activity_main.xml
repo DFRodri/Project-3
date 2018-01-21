@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical"
+    tools:context="com.example.android.tplhtce.MainActivity"
+    tools:ignore="ContentDescription">
+
+
+    <LinearLayout
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/logoMarginXL"
+        android:layout_marginLeft="@dimen/logoMarginXL"
+        android:layout_marginRight="@dimen/logoMarginXL"
+        android:layout_marginStart="@dimen/logoMarginXL"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/logoHeightV"
+            android:layout_weight="1"
+            android:src="@drawable/logo" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/orangeSquare"
+                    android:layout_width="@dimen/sliceSizeM"
+                    android:layout_height="@dimen/sliceSizeM"
+                    android:layout_marginEnd="@dimen/buttonMargin"
+                    android:layout_marginRight="@dimen/buttonMargin"
+                    android:background="@drawable/border" />
+
+                <View
+                    android:id="@+id/blueSquare"
+                    android:layout_width="@dimen/sliceSizeM"
+                    android:layout_height="@dimen/sliceSizeM"
+                    android:layout_marginEnd="@dimen/buttonMargin"
+                    android:layout_marginRight="@dimen/buttonMargin"
+                    android:background="@drawable/border" />
+
+                <View
+                    android:id="@+id/yellowSquare"
+                    android:layout_width="@dimen/sliceSizeM"
+                    android:layout_height="@dimen/sliceSizeM"
+                    android:layout_marginEnd="@dimen/buttonMargin"
+                    android:layout_marginRight="@dimen/buttonMargin"
+                    android:background="@drawable/border" />
+
+                <View
+                    android:id="@+id/brownSquare"
+                    android:layout_width="@dimen/sliceSizeM"
+                    android:layout_height="@dimen/sliceSizeM"
+                    android:background="@drawable/border" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border"
+                android:layout_marginTop="@dimen/buttonMargin"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/setPlayerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/buttonMargin"
+                    android:paddingLeft="@dimen/buttonMargin"
+                    android:paddingRight="@dimen/buttonMargin"
+                    android:paddingStart="@dimen/buttonMargin"
+                    android:text="@string/playerName"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pointsValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/buttonMargin"
+                    android:paddingLeft="@dimen/buttonMargin"
+                    android:paddingRight="@dimen/buttonMargin"
+                    android:paddingStart="@dimen/buttonMargin"
+                    android:text="@string/initialPoints"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pointsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/buttonMargin"
+                    android:paddingLeft="@dimen/buttonMargin"
+                    android:paddingRight="@dimen/buttonMargin"
+                    android:paddingStart="@dimen/buttonMargin"
+                    android:text="@string/points"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/normalMargin"
+            android:paddingStart="@dimen/normalMargin"
+            android:paddingRight="@dimen/normalMargin"
+            android:paddingEnd="@dimen/normalMargin"
+            android:gravity="center|start"
+            android:text="@string/welcomeToHell"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeS" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/normalMargin"
+            android:paddingStart="@dimen/normalMargin"
+            android:paddingRight="@dimen/normalMargin"
+            android:paddingEnd="@dimen/normalMargin"
+            android:gravity="center|start"
+            android:text="@string/welcomeToHell2"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeS" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/advanceNormalMargin"
+            android:paddingStart="@dimen/advanceNormalMargin"
+            android:paddingRight="@dimen/advanceNormalMargin"
+            android:paddingEnd="@dimen/advanceNormalMargin"
+            android:gravity="center|start"
+            android:text="@string/welcomeToHell3"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeS" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/normalMargin"
+            android:paddingStart="@dimen/normalMargin"
+            android:paddingRight="@dimen/normalMargin"
+            android:paddingEnd="@dimen/normalMargin"
+            android:gravity="center|start"
+            android:text="@string/welcomeToHell4"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeS" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcomeToHell5"
+            android:paddingLeft="@dimen/normalMargin"
+            android:paddingStart="@dimen/normalMargin"
+            android:paddingRight="@dimen/normalMargin"
+            android:paddingEnd="@dimen/normalMargin"
+            android:gravity="center|start"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeS" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/advanceNormalMargin"
+            android:paddingStart="@dimen/advanceNormalMargin"
+            android:paddingRight="@dimen/advanceNormalMargin"
+            android:paddingEnd="@dimen/advanceNormalMargin"
+            android:gravity="center|start"
+            android:text="@string/welcomeToHell6"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeS" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/advanceNormalMargin"
+            android:paddingStart="@dimen/advanceNormalMargin"
+            android:paddingRight="@dimen/advanceNormalMargin"
+            android:paddingEnd="@dimen/advanceNormalMargin"
+            android:gravity="center|start"
+            android:text="@string/welcomeToHell7"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeS" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/normalMargin"
+            android:paddingStart="@dimen/normalMargin"
+            android:paddingRight="@dimen/normalMargin"
+            android:paddingEnd="@dimen/normalMargin"
+            android:gravity="center|start"
+            android:text="@string/welcomeToHell8"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeS" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/playerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/normalMargin"
+                android:layout_marginStart="@dimen/normalMargin"
+                android:hint="@string/giveMeYourName"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/textSizeM" />
+
+            <Button
+                android:id="@+id/giveOkay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/normalMargin"
+                android:layout_marginStart="@dimen/normalMargin"
+                android:onClick="setName"
+                android:text="@string/yes"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textSizeS" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/normalMargin"
+            android:layout_marginEnd="@dimen/normalMargin"
+            android:layout_marginRight="@dimen/normalMargin"
+            android:gravity="bottom|end"
+            android:text="@string/theDevil"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeS" />
+
+    </LinearLayout>
+
+</LinearLayout>

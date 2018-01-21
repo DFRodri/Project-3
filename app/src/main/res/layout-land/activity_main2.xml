@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical"
+    tools:context="com.example.android.tplhtce.Main2Activity"
+    tools:ignore="ContentDescription">
+
+    <LinearLayout
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/logoMarginXL"
+        android:layout_marginLeft="@dimen/logoMarginXL"
+        android:layout_marginRight="@dimen/logoMarginXL"
+        android:layout_marginStart="@dimen/logoMarginXL"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/logoHeightV"
+            android:layout_weight="1"
+            android:src="@drawable/logo" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/orangeSquare"
+                    android:layout_width="@dimen/sliceSizeM"
+                    android:layout_height="@dimen/sliceSizeM"
+                    android:layout_marginEnd="@dimen/buttonMargin"
+                    android:layout_marginRight="@dimen/buttonMargin"
+                    android:background="@drawable/border" />
+
+                <View
+                    android:id="@+id/blueSquare"
+                    android:layout_width="@dimen/sliceSizeM"
+                    android:layout_height="@dimen/sliceSizeM"
+                    android:layout_marginEnd="@dimen/buttonMargin"
+                    android:layout_marginRight="@dimen/buttonMargin"
+                    android:background="@drawable/border" />
+
+                <View
+                    android:id="@+id/yellowSquare"
+                    android:layout_width="@dimen/sliceSizeM"
+                    android:layout_height="@dimen/sliceSizeM"
+                    android:layout_marginEnd="@dimen/buttonMargin"
+                    android:layout_marginRight="@dimen/buttonMargin"
+                    android:background="@drawable/border" />
+
+                <View
+                    android:id="@+id/brownSquare"
+                    android:layout_width="@dimen/sliceSizeM"
+                    android:layout_height="@dimen/sliceSizeM"
+                    android:background="@drawable/border" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border"
+                android:layout_marginTop="@dimen/buttonMargin"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/setPlayerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/buttonMargin"
+                    android:paddingLeft="@dimen/buttonMargin"
+                    android:paddingRight="@dimen/buttonMargin"
+                    android:paddingStart="@dimen/buttonMargin"
+                    android:text="@string/playerName"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pointsValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/buttonMargin"
+                    android:paddingLeft="@dimen/buttonMargin"
+                    android:paddingRight="@dimen/buttonMargin"
+                    android:paddingStart="@dimen/buttonMargin"
+                    android:text="@string/initialPoints"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pointsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/buttonMargin"
+                    android:paddingLeft="@dimen/buttonMargin"
+                    android:paddingRight="@dimen/buttonMargin"
+                    android:paddingStart="@dimen/buttonMargin"
+                    android:text="@string/points"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/question_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/clearSquare"
+        android:gravity="center"
+        android:padding="@dimen/buttonMarginXL"
+        android:text="@string/categoryQuestion"
+        android:textColor="@color/textColor2"
+        android:textSize="@dimen/textSize" />
+
+    <LinearLayout
+        android:baselineAligned="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:baselineAligned="false"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/categoryA"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLandSize"
+                android:background="@drawable/history"
+                android:onClick="getCategory0"
+                android:text="@string/category1"
+                android:textColor="@color/bg"
+                android:textSize="@dimen/textSizeXL"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/categoryB"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLandSize"
+                android:background="@drawable/sports"
+                android:onClick="getCategory1"
+                android:text="@string/category2"
+                android:textColor="@color/bg"
+                android:textSize="@dimen/textSizeXL"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:baselineAligned="false"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/categoryC"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLandSize"
+                android:background="@drawable/animals"
+                android:onClick="getCategory2"
+                android:text="@string/category3"
+                android:textColor="@color/bg"
+                android:textSize="@dimen/textSizeXL"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/categoryD"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLandSize"
+                android:background="@drawable/mtg"
+                android:onClick="getCategory3"
+                android:text="@string/category4"
+                android:textColor="@color/bg"
+                android:textSize="@dimen/textSizeXL"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

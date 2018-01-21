@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/divider"
+    android:keepScreenOn="true"
+    tools:context="com.example.android.tplhtce.winner">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/youCantWin"
+        android:scaleType="centerCrop"
+        android:background="@drawable/win"
+        android:layout_centerInParent="true"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/congratulations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:lines="6"
+        android:paddingEnd="@dimen/normalMargin"
+        android:paddingLeft="@dimen/normalMargin"
+        android:paddingRight="@dimen/normalMargin"
+        android:paddingStart="@dimen/normalMargin"
+        android:text=""
+        android:textColor="@color/textColor2"
+        android:textSize="@dimen/textSizeM"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/restartButton"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/buttonRestart"
+        android:background="@drawable/border_choice_right"
+        android:onClick="restart"
+        android:padding="@dimen/restartPadding"
+        android:text="@string/restart"
+        android:textStyle="italic|bold" />
+
+</RelativeLayout>

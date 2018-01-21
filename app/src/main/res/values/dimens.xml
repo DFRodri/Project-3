@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Text Size-->
+    <dimen name="textSize">20sp</dimen>
+    <dimen name="textSizeS">12sp</dimen>
+    <dimen name="textSizeM">16sp</dimen>
+    <dimen name="textSizeXL">30sp</dimen>
+    <dimen name="textSizeXXL">40sp</dimen>
+    <dimen name="textSendCategory">35dp</dimen>
+
+    <!--Text Margin-->
+    <dimen name="textMargin">8dp</dimen>
+
+    <!--Screen Margin-->
+    <dimen name="screenMargin">14dp</dimen>
+    <dimen name="normalMargin">24dp</dimen>
+    <dimen name="advanceNormalMargin">30dp</dimen>
+
+    <!--Question Margin-->
+    <dimen name="questionMarginLeft">40dp</dimen>
+
+    <!--Game Over Button-->
+    <dimen name="restartPadding">20dp</dimen>
+
+    <!--Winner Screen-->
+    <dimen name="youCantWin">280dp</dimen>
+
+    <!--Radio Button Margin-->
+    <dimen name="radioButtonTop">5dp</dimen>
+    <dimen name="radioButtonBottom">5dp</dimen>
+    <dimen name="radioButtonGeneric">8dp</dimen>
+
+    <!--Question Padding-->
+    <dimen name="questionPaddingLeft">10dp</dimen>
+    <dimen name="questionPadding">10dp</dimen>
+    <dimen name="questionPaddingRight">10dp</dimen>
+    <dimen name="questionChoicePaddingLeft">40dp</dimen>
+    <dimen name="questionChoicePaddingRight">40dp</dimen>
+
+    <!--Image Margin-->
+    <dimen name="imageMargin">10dp</dimen>
+    <dimen name="imagePreview">5dp</dimen>
+
+    <!--Logo Margin-->
+    <dimen name="logoHeightV">100dp</dimen>
+    <dimen name="logoMarginXL">20dp</dimen>
+
+    <!--Cheese Slices-->
+    <dimen name="sliceSize">28dp</dimen>
+    <dimen name="sliceSizeM">50dp</dimen>
+
+    <!--Button's Margin, Padding & Size-->
+    <dimen name="buttonMargin">5dp</dimen>
+    <dimen name="buttonMarginXL">8dp</dimen>
+    <dimen name="buttonMarginXXL">28dp</dimen>
+    <dimen name="buttonRestart">28dp</dimen>
+
+    <dimen name="buttonPadding">2dp</dimen>
+
+    <dimen name="buttonLandSize">90dp</dimen>
+
+    <dimen name="imageButtonBoxSize">28dp</dimen>
+
+</resources>

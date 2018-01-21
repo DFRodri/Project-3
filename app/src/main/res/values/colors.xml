@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#000000</color>
+
+    <color name="bg">#e0f7fa</color>
+
+    <!--Text Color-->
+    <color name="textColor">#000000</color>
+    <color name="textColor2">#e0f7fa</color>
+    <color name="categoryColor">#006064</color>
+
+    <!--Cheese Slice Colors-->
+    <color name="orange">#FF9800</color>
+    <color name="blue">#2196F3</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="brown">#A1887F</color>
+
+    <color name="grey">#C0C0C0</color>
+
+    <!--Divider-->
+    <color name="divider">#000000</color>
+
+    <!--No Square-->
+    <color name="clearSquare">#607D8B</color>
+
+</resources>

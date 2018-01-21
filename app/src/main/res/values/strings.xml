@@ -1,0 +1,164 @@
+<resources>
+    <!--Name of the APP and the base of each question-->
+    <string name="app_name" translatable="false">Trivial Pursuit: Learn How to Code Edition</string>
+
+    <string name="a" translatable="false"> A. </string>
+    <string name="b" translatable="false"> B. </string>
+    <string name="c" translatable="false"> C. </string>
+    <string name="d" translatable="false"> D. </string>
+
+    <!--Welcome & name-->
+    <string name="welcomeToHell">Dear human, welcome to my humble trap.</string>
+    <string name="welcomeToHell2">I mean\&#8230;welcome to my humble house. Here, take a seat.</string>
+    <string name="welcomeToHell3">*grabs a char and sits*</string>
+    <string name="welcomeToHell4">Now, let\'s play a game? I promise that it will be short.</string>
+    <string name="welcomeToHell5">And you will enjoy its end:</string>
+    <string name="welcomeToHell6">- Defeat means that I get your soul.</string>
+    <string name="welcomeToHell7">- Win\&#8230; well, I guess I can let you live for a bit more.</string>
+    <string name="welcomeToHell8">By the way, dear player,</string>
+
+    <string name="giveMeYourName">Can I get a name?</string>
+
+    <string name="yes">Yes</string>
+
+    <string name="noName">Nothing you say? Then I will simply call you a\&#8230; LOSER!</string>
+
+    <string name="theDevil">Many thanks from The Devil</string>
+
+    <!--GAME OVER-->
+    <string name="restart">Restart</string>
+
+    <!--Winning Screen-->
+    <string name="winState1">Congratulations,</string>
+    <string name="winState2">of your body will survive another day.</string>
+    <string name="winState3">of you body is served as a meal to the Devil.</string>
+    <string name="winState4">And you, my friend, died from all that pain.</string>
+    <string name="winState5">THE END.</string>
+
+    <!--points-->
+    <string name="playerName" translatable="false">Total</string>
+    <string name="loserName">Loser</string>
+    <string name="points">Points</string>
+    <string name="initialPoints" translatable="false">0</string>
+
+    <!--Category selection-->
+    <string name="categoryQuestion">Pick a Category!</string>
+    <string name="category1">History</string>
+    <string name="category2">Sports</string>
+    <string name="category3">Animals</string>
+    <string name="category4" translatable="false">Magic: The Gathering</string>
+    <string name="okayCheck">Pride, I choose you!</string>
+    <string name="okayRadio">I CHOOSE YOU!</string>
+
+    <!--Wrongs and Rights-->
+    <string name="correct">CORRECT! + 25 POINTS</string>
+    <string name="wrong">Wrong! - 10 POINTS</string>
+
+    <!--When a Category is Cleared-->
+    <string name="done">--Cleared--</string>
+
+    <!--If someone tries to cheat-->
+    <string name="noToCheaters">Are you trying to cheat?</string>
+
+    <!--History Questions-->
+    <string name="q1_1">This 400,000 years old fossil was found in\&#8230;</string>
+    <string name="q1_1A">Portugal</string><!--correct-->
+    <string name="q1_1B">In my basement</string>
+    <string name="q1_1C">Scotland</string>
+    <string name="q1_1D">China</string>
+
+    <string name="q1_2">Which of this places have a temple about the Goddess Diana?</string>
+    <string name="q1_2A" translatable="false">Mérida</string><!--correct-->
+    <string name="q1_2B">Lisbon</string>
+    <string name="q1_2C" translatable="false">Badajoz</string>
+    <string name="q1_2D" translatable="false">Évora</string><!--correct-->
+
+    <string name="q1_3">Which ones are the officials languages of Portugal?</string>
+    <string name="q1_3A">Mirandese</string><!--correct-->
+    <string name="q1_3B">Portuguese</string><!--correct-->
+    <string name="q1_3C">Spanish</string>
+    <string name="q1_3D">Portinglese</string>
+
+    <string name="q1_4">Who didn\'t made tea famous in England?</string>
+    <string name="q1_4A" translatable="false">Maria Anne Fitzherbert</string><!--correct-->
+    <string name="q1_4B">Catherine of Braganza</string>
+    <string name="q1_4C" translatable="false">Frederica C. of Prussia</string><!--correct-->
+    <string name="q1_4D" translatable="false">Maria Antonia J. Johanna</string><!--correct-->
+
+    <!--Sports Questions-->
+    <string name="q2_1">Who is the current Women\'s World Chess Champion?</string>
+    <string name="q2_1A" translatable="false">Mariya Muzychuk</string>
+    <string name="q2_1B" translatable="false">Yifan Hou</string><!--correct-->
+    <string name="q2_1C" translatable="false">Isdat Agame</string>
+    <string name="q2_1D" translatable="false">Xu Yuhua</string>
+
+    <string name="q2_2">What is a shuttlecock?</string>
+    <string name="q2_2A">One of the zones from a Tennis court</string>
+    <string name="q2_2B">Projectile used in Badminton</string><!--correct-->
+    <string name="q2_2C">Trick used in Football</string>
+    <string name="q2_2D">Ball used in Fussball</string>
+
+    <string name="q2_3">One of them never used the number 7 in Manchester United.</string>
+    <string name="q2_3A" translatable="false">George Best</string>
+    <string name="q2_3B" translatable="false">Eric Cantona</string>
+    <string name="q2_3C" translatable="false">Antonio Valencia</string>
+    <string name="q2_3D" translatable="false">Paul Scholes</string><!--correct-->
+
+    <string name="q2_4">One of them never played for the Chicago Bulls.</string>
+    <string name="q2_4A" translatable="false">Michael Jordan</string>
+    <string name="q2_4B" translatable="false">Scotty Pippen</string>
+    <string name="q2_4C" translatable="false">Dennis Rodman</string>
+    <string name="q2_4D" translatable="false">Larry Bird</string><!--correct-->
+
+    <!--Animals Questions-->
+    <string name="q3_1">Who is the king of Savanna?</string>
+    <string name="q3_1A">Lion</string><!--correct-->
+    <string name="q3_1B">Zebra</string>
+    <string name="q3_1C">Elephant</string>
+    <string name="q3_1D">Gnu</string>
+
+    <string name="q3_2">Which of this animals isn\'t a fish?</string>
+    <string name="q3_2A">Tuna</string>
+    <string name="q3_2B">Cod</string>
+    <string name="q3_2C">Shark</string>
+    <string name="q3_2D">Whale</string><!--correct-->
+
+    <string name="q3_3">North Pole is my home. Can you guess my name?</string>
+    <string name="q3_3A">Polar Bear</string><!--correct-->
+    <string name="q3_3B">Pinguin</string>
+    <string name="q3_3C">Tiger Shark</string>
+    <string name="q3_3D" translatable="false">Swallow</string>
+
+    <string name="q3_4">Only one of them can regenerate parts of its body.</string>
+    <string name="q3_4A">Starfish</string><!--correct-->
+    <string name="q3_4B">Homing Lizard</string>
+    <string name="q3_4C">Sand Lion of North</string>
+    <string name="q3_4D">Igneous South Bee of Aracujún</string>
+
+    <!--Magic: The Gathering Questions-->
+    <!--NOTE: They aren't used but are here to check values since images are pseudo-linked to them-->
+    <string name="q4_1">You will never own me!</string>
+    <string name="q4_1A" translatable="false">Black Lotus</string><!--correct-->
+    <string name="q4_1B" translatable="false">Platinum Angel</string>
+    <string name="q4_1C" translatable="false">Serra\'s Angel</string>
+    <string name="q4_1D" translatable="false">Nalathni Dragon</string>
+
+    <string name="q4_2">I\'m THE BEAST in terms of attack and defence!</string>
+    <string name="q4_2A" translatable="false">Big Fury Monster</string><!--correct-->
+    <string name="q4_2B" translatable="false">Emrakul, the Aeons Torn</string>
+    <string name="q4_2C" translatable="false">Worldgorger Dragon</string>
+    <string name="q4_2D" translatable="false">Phyrexian Dreadnought</string>
+
+    <string name="q4_3">One of this cards is a Legendary Creature</string>
+    <string name="q4_3A" translatable="false">Death\'s Shadow</string>
+    <string name="q4_3B" translatable="false">Demon of Death\'s Gate</string>
+    <string name="q4_3C" translatable="false">Sisters of Stone Death</string><!--correct-->
+    <string name="q4_3D" translatable="false">Nyxathid</string>
+
+    <string name="q4_4">Which card isn\'t an artifact?</string>
+    <string name="q4_4A" translatable="false">Urza\'s Tower</string><!--correct-->
+    <string name="q4_4B" translatable="false">Mishra\'s Bauble</string>
+    <string name="q4_4C" translatable="false">Akroma\'s Memorial</string>
+    <string name="q4_4D" translatable="false">Ancient Den</string>
+
+</resources>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical"
+    tools:context="com.example.android.tplhtce.category1"
+    tools:ignore="ContentDescription">
+
+    <LinearLayout
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/logoMarginXL"
+        android:layout_marginLeft="@dimen/logoMarginXL"
+        android:layout_marginRight="@dimen/logoMarginXL"
+        android:layout_marginStart="@dimen/logoMarginXL"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/logoHeightV"
+            android:layout_weight="1"
+            android:src="@drawable/logo" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/orangeSquare"
+                    android:layout_width="@dimen/sliceSizeM"
+                    android:layout_height="@dimen/sliceSizeM"
+                    android:layout_marginEnd="@dimen/buttonMargin"
+                    android:layout_marginRight="@dimen/buttonMargin"
+                    android:background="@drawable/border" />
+
+                <View
+                    android:id="@+id/blueSquare"
+                    android:layout_width="@dimen/sliceSizeM"
+                    android:layout_height="@dimen/sliceSizeM"
+                    android:layout_marginEnd="@dimen/buttonMargin"
+                    android:layout_marginRight="@dimen/buttonMargin"
+                    android:background="@drawable/border" />
+
+                <View
+                    android:id="@+id/yellowSquare"
+                    android:layout_width="@dimen/sliceSizeM"
+                    android:layout_height="@dimen/sliceSizeM"
+                    android:layout_marginEnd="@dimen/buttonMargin"
+                    android:layout_marginRight="@dimen/buttonMargin"
+                    android:background="@drawable/border" />
+
+                <View
+                    android:id="@+id/brownSquare"
+                    android:layout_width="@dimen/sliceSizeM"
+                    android:layout_height="@dimen/sliceSizeM"
+                    android:background="@drawable/border" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/buttonMargin"
+                android:background="@drawable/border"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/setPlayerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/buttonMargin"
+                    android:paddingLeft="@dimen/buttonMargin"
+                    android:paddingRight="@dimen/buttonMargin"
+                    android:paddingStart="@dimen/buttonMargin"
+                    android:text="@string/playerName"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pointsValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/buttonMargin"
+                    android:paddingLeft="@dimen/buttonMargin"
+                    android:paddingRight="@dimen/buttonMargin"
+                    android:paddingStart="@dimen/buttonMargin"
+                    android:text="@string/initialPoints"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pointsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/buttonMargin"
+                    android:paddingLeft="@dimen/buttonMargin"
+                    android:paddingRight="@dimen/buttonMargin"
+                    android:paddingStart="@dimen/buttonMargin"
+                    android:text="@string/points"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/AnswerOptions"
+        android:layout_below="@id/logo"
+        android:layout_marginBottom="@dimen/textMargin"
+        android:background="@drawable/border_question"
+        android:gravity="center"
+        android:paddingEnd="@dimen/questionPaddingRight"
+        android:paddingLeft="@dimen/questionPaddingLeft"
+        android:paddingRight="@dimen/questionPaddingRight"
+        android:paddingStart="@dimen/questionPaddingLeft"
+        android:text=""
+        android:textAllCaps="true"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/textSizeM"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/AnswerOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/sendAnswer"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/buttonMargin"
+        android:layout_marginStart="@dimen/buttonMargin"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/labelA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/buttonMargin"
+                android:background="@drawable/border"
+                android:onClick="checkAnswer"
+                android:text=""
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textSizeS"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/labelB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/buttonMargin"
+                android:background="@drawable/border"
+                android:onClick="checkAnswer"
+                android:text=""
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textSizeS"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/labelC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/buttonMargin"
+                android:background="@drawable/border"
+                android:onClick="checkAnswer"
+                android:text=""
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textSizeS"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/labelD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:onClick="checkAnswer"
+                android:text=""
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textSizeS"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/buttonMargin"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/hintPic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:scaleType="centerInside" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/sendAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/buttonMargin"
+        android:background="@drawable/border_answer"
+        android:onClick="submitAnswer"
+        android:text="@string/okayCheck"
+        android:textColor="@color/textColor2"
+        android:textSize="@dimen/textSizeM" />
+
+</RelativeLayout>

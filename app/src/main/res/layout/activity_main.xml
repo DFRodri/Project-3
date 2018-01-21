@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical"
+    tools:context="com.example.android.tplhtce.MainActivity"
+    tools:ignore="ContentDescription">
+
+
+    <LinearLayout
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/normalMargin"
+        android:paddingRight="@dimen/normalMargin"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/logoHeightV"
+            android:layout_weight="1"
+            android:paddingRight="@dimen/normalMargin"
+            android:paddingEnd="@dimen/normalMargin"
+            android:src="@drawable/logo" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <View
+                    android:id="@+id/orangeSquare"
+                    android:layout_width="@dimen/sliceSize"
+                    android:layout_height="@dimen/sliceSize"
+                    android:layout_marginEnd="@dimen/buttonMargin"
+                    android:layout_marginRight="@dimen/buttonMargin"
+                    android:background="@drawable/border" />
+
+                <View
+                    android:id="@+id/blueSquare"
+                    android:layout_width="@dimen/sliceSize"
+                    android:layout_height="@dimen/sliceSize"
+                    android:layout_marginEnd="@dimen/buttonMargin"
+                    android:layout_marginRight="@dimen/buttonMargin"
+                    android:background="@drawable/border" />
+
+                <View
+                    android:id="@+id/yellowSquare"
+                    android:layout_width="@dimen/sliceSize"
+                    android:layout_height="@dimen/sliceSize"
+                    android:layout_marginEnd="@dimen/buttonMargin"
+                    android:layout_marginRight="@dimen/buttonMargin"
+                    android:background="@drawable/border" />
+
+                <View
+                    android:id="@+id/brownSquare"
+                    android:layout_width="@dimen/sliceSize"
+                    android:layout_height="@dimen/sliceSize"
+                    android:background="@drawable/border" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/buttonMargin"
+                android:background="@drawable/border"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/setPlayerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/buttonMargin"
+                    android:paddingLeft="@dimen/buttonMargin"
+                    android:paddingRight="@dimen/buttonMargin"
+                    android:paddingStart="@dimen/buttonMargin"
+                    android:text="@string/playerName"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textSizeS"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pointsValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/buttonMargin"
+                    android:paddingLeft="@dimen/buttonMargin"
+                    android:paddingRight="@dimen/buttonMargin"
+                    android:paddingStart="@dimen/buttonMargin"
+                    android:text="@string/initialPoints"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textSizeS"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pointsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/buttonMargin"
+                    android:paddingLeft="@dimen/buttonMargin"
+                    android:paddingRight="@dimen/buttonMargin"
+                    android:paddingStart="@dimen/buttonMargin"
+                    android:text="@string/points"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textSizeS"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/normalMargin"
+        android:paddingRight="@dimen/normalMargin"
+        android:layout_below="@id/logo"
+        android:layout_above="@id/submit_name">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|start"
+            android:paddingLeft="@dimen/normalMargin"
+            android:paddingRight="@dimen/normalMargin"
+            android:text="@string/welcomeToHell"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeM" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/normalMargin"
+            android:paddingRight="@dimen/normalMargin"
+            android:gravity="center|start"
+            android:text="@string/welcomeToHell2"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeM" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/normalMargin"
+            android:paddingRight="@dimen/normalMargin"
+            android:gravity="center|start"
+            android:text="@string/welcomeToHell3"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeM" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/normalMargin"
+            android:paddingRight="@dimen/normalMargin"
+            android:gravity="center|start"
+            android:text="@string/welcomeToHell4"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeM" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/normalMargin"
+            android:paddingRight="@dimen/normalMargin"
+            android:gravity="center|start"
+            android:text="@string/welcomeToHell5"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeM" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/advanceNormalMargin"
+            android:paddingRight="@dimen/advanceNormalMargin"
+            android:gravity="center|start"
+            android:text="@string/welcomeToHell6"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeM" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/advanceNormalMargin"
+            android:paddingRight="@dimen/advanceNormalMargin"
+            android:gravity="center|start"
+            android:text="@string/welcomeToHell7"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeM" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/normalMargin"
+            android:paddingRight="@dimen/normalMargin"
+            android:gravity="center|start"
+            android:text="@string/welcomeToHell8"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeM" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/submit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/playerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/giveMeYourName"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/textSizeM" />
+
+            <Button
+                android:id="@+id/giveOkay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/normalMargin"
+                android:layout_marginStart="@dimen/normalMargin"
+                android:onClick="setName"
+                android:text="@string/yes"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textSizeS" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/normalMargin"
+            android:gravity="bottom|end"
+            android:text="@string/theDevil"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textSizeS" />
+
+    </LinearLayout>
+
+</RelativeLayout>
