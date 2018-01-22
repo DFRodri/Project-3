@@ -13,16 +13,18 @@
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:paddingLeft="@dimen/normalMargin"
-        android:paddingRight="@dimen/normalMargin"
-        android:gravity="center">
+        android:paddingRight="@dimen/normalMargin">
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="@dimen/logoHeightV"
             android:layout_weight="1"
-            android:paddingRight="@dimen/normalMargin"
             android:paddingEnd="@dimen/normalMargin"
+            android:paddingLeft="0dp"
+            android:paddingRight="@dimen/normalMargin"
+            android:paddingStart="0dp"
             android:src="@drawable/logo" />
 
         <LinearLayout
@@ -127,16 +129,32 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/question_view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/clearSquare"
-        android:gravity="center"
-        android:padding="@dimen/buttonMarginXL"
-        android:text="@string/categoryQuestion"
-        android:textColor="@color/textColor2"
-        android:textSize="@dimen/textSize" />
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/question_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/clearSquare"
+            android:gravity="center"
+            android:padding="@dimen/buttonMarginXL"
+            android:text="@string/categoryQuestion"
+            android:textColor="@color/textColor2"
+            android:textSize="@dimen/textSize" />
+
+        <ImageButton
+            android:layout_width="@dimen/restartButton"
+            android:layout_height="@dimen/restartButton"
+            android:onClick="restart"
+            android:background="@drawable/border_retry_right"
+            android:foreground="@drawable/retrybutton"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -154,7 +172,7 @@
             android:background="@drawable/history"
             android:onClick="getCategory0"
             android:text="@string/category1"
-            android:textColor="@color/bg"
+            android:textColor="@color/TextCategoryColor"
             android:textSize="@dimen/textSizeXXL"
             android:textStyle="bold" />
 
@@ -167,7 +185,7 @@
             android:background="@drawable/sports"
             android:onClick="getCategory1"
             android:text="@string/category2"
-            android:textColor="@color/bg"
+            android:textColor="@color/TextCategoryColor"
             android:textSize="@dimen/textSizeXXL"
             android:textStyle="bold" />
 
@@ -180,7 +198,7 @@
             android:background="@drawable/animals"
             android:onClick="getCategory2"
             android:text="@string/category3"
-            android:textColor="@color/bg"
+            android:textColor="@color/TextCategoryColor"
             android:textSize="@dimen/textSizeXXL"
             android:textStyle="bold" />
 
@@ -193,7 +211,7 @@
             android:background="@drawable/mtg"
             android:onClick="getCategory3"
             android:text="@string/category4"
-            android:textColor="@color/bg"
+            android:textColor="@color/TextCategoryColor"
             android:textSize="@dimen/textSizeXL"
             android:textStyle="bold" />
 

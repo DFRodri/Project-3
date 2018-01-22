@@ -9,6 +9,7 @@
     <!--Text Color-->
     <color name="textColor">#000000</color>
     <color name="textColor2">#e0f7fa</color>
+    <color name="TextCategoryColor">#ffffff</color>
     <color name="categoryColor">#006064</color>
 
     <!--Cheese Slice Colors-->

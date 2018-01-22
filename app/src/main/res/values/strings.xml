@@ -161,4 +161,9 @@
     <string name="q4_4C" translatable="false">Akroma\'s Memorial</string>
     <string name="q4_4D" translatable="false">Ancient Den</string>
 
+    <!--Empty answers aren't good, they're will make players get undesirable game overs-->
+    <string name="wakeUpPlayer">Nothing is always something but\&#8230; where is the answer?</string>
+    <string name="angryDevil">YOU SON OF A B!"#$%! Do you to die?</string>
+    <string name="devilShot">Final Warning!</string>
+
 </resources>

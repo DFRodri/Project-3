@@ -13,7 +13,8 @@ import java.util.ArrayList;
 public class category3 extends AppCompatActivity {
 
     //global variables used in this activity
-    String pressedAnswer;
+    String pressedAnswer = "";
+    int wakeUp;
 
     //global variables passed between activities
     String rightAnswerCheck;
@@ -26,11 +27,12 @@ public class category3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category3);
 
-        //grabs playerInfo, CategoryCompleted, question, answers and right answers from
+        //grabs playerInfo, CategoryCompleted, question, answers, warning joke and right answers from
         //MainActivity.java to create most of the info displayed in the screen
         answers = getIntent().getStringArrayListExtra("getAnswers");
         rightAnswerCheck = getIntent().getStringExtra("getRightAnswer");
         playerInfo = getIntent().getStringArrayExtra("getPlayerInfo");
+        wakeUp = getIntent().getIntExtra("warning", 0);
         categoryCompleted = getIntent().getIntArrayExtra("getCategoriesCompleted");
 
         //sets the player name and current points
@@ -123,26 +125,21 @@ public class category3 extends AppCompatActivity {
 
         switch (view.getId()) {
             case R.id.labelA:
-                if (checked) {
+                if (checked)
                     pressedAnswer = answers.get(1);
                     break;
-                }
             case R.id.labelB:
-                if (checked) {
+                if (checked)
                     pressedAnswer = answers.get(2);
                     break;
-                }
             case R.id.labelC:
-                if (checked) {
+                if (checked)
                     pressedAnswer = answers.get(3);
                     break;
-                }
             case R.id.labelD:
-                if (checked) {
+                if (checked)
                     pressedAnswer = answers.get(4);
                     break;
-                }
-
         }
 
     }
@@ -151,12 +148,40 @@ public class category3 extends AppCompatActivity {
     //depending of the results, it goes to the correct or wrong method
     public void submitAnswer(View view) {
 
-        if (pressedAnswer.equals(rightAnswerCheck)) {
-            correct();
-        } else {
-            wrong();
-        }
+        //just in case someone decides to check zero options (and also to give a good laugh)
+        if (pressedAnswer.isEmpty()) {
+            wakeUp += 1;
+            if (wakeUp == 1) {
+                Toast.makeText(this, getString(R.string.wakeUpPlayer), Toast.LENGTH_SHORT).show();
+            }
+            if (wakeUp == 2) {
+                Toast.makeText(this, getString(R.string.angryDevil), Toast.LENGTH_SHORT).show();
+            }
+            if (wakeUp == 3) {
+                Toast.makeText(this, getString(R.string.devilShot), Toast.LENGTH_SHORT).show();
+            }
+            if (wakeUp == 4) {
+                Intent gameOver = new Intent(this, gameover.class);
+                startActivity(gameOver);
+                return;
+            }
 
+            //Time to drop the ball into the next category with this long pass full of putSomethingOnTheOtherSide
+            Intent restart = new Intent(this, category3.class);
+            restart.putStringArrayListExtra("getAnswers", answers);
+            restart.putExtra("getRightAnswer", rightAnswerCheck);
+            restart.putExtra("warning",wakeUp);
+            restart.putExtra("getPlayerInfo", playerInfo);
+            restart.putExtra("getCategoriesCompleted", categoryCompleted);
+            restart.addFlags(restart.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(restart);
+        } else {
+            if (pressedAnswer.equals(rightAnswerCheck)) {
+                correct();
+            } else {
+                wrong();
+            }
+        }
     }
 
     //adds points to the total score stored in playerInfo[1]
@@ -205,6 +230,7 @@ public class category3 extends AppCompatActivity {
     //also doesn't forget about the necessary variables needed everywhere
     private void goToCategories() {
         Intent categoryOptions = new Intent(this, Main2Activity.class);
+        categoryOptions.putExtra("warning", wakeUp);
         categoryOptions.putExtra("getPlayerInfo", playerInfo);
         categoryOptions.putExtra("getCategoriesCompleted", categoryCompleted);
         startActivity(categoryOptions);

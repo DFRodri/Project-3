@@ -18,6 +18,7 @@ public class category1 extends AppCompatActivity {
     ArrayList<String> checkedOptions = new ArrayList<>(4);
     ArrayList<String> answers = new ArrayList<>(5);
     ArrayList<String> rightAnswers = new ArrayList<>(3);
+    int wakeUp;
 
     //global variables passed between activities
     int[] categoryCompleted = new int[4];
@@ -32,6 +33,7 @@ public class category1 extends AppCompatActivity {
         //MainActivity.java to create most of the info displayed in the screen
         answers = getIntent().getStringArrayListExtra("getAnswers");
         rightAnswers = getIntent().getStringArrayListExtra("getRightAnswers");
+        wakeUp = getIntent().getIntExtra("warning", 0);
         playerInfo = getIntent().getStringArrayExtra("getPlayerInfo");
         categoryCompleted = getIntent().getIntArrayExtra("getCategoriesCompleted");
 
@@ -161,20 +163,42 @@ public class category1 extends AppCompatActivity {
     //Step 2 - with them sorted, we can check if both sorts are equal or not
     public void submitAnswer(View view) {
 
-        if ((checkedOptions.size()) != (rightAnswers.size())) {
-            wrong();
-        } else {
+        //just in case someone decides to check zero options (and also to give a good laugh)
+        if (checkedOptions.isEmpty()) {
+            wakeUp += 1;
+            if (wakeUp == 1) {
+                Toast.makeText(this, getString(R.string.wakeUpPlayer), Toast.LENGTH_SHORT).show();
+            }
+            if (wakeUp == 2) {
+                Toast.makeText(this, getString(R.string.angryDevil), Toast.LENGTH_SHORT).show();
+            }
+            if (wakeUp == 3) {
+                Toast.makeText(this, getString(R.string.devilShot), Toast.LENGTH_SHORT).show();
+            }
+            if (wakeUp == 4) {
+                Intent gameOver = new Intent(this, gameover.class);
+                startActivity(gameOver);
+                return;
+            }
 
+            //Restarting the category to prevent errors
+            Intent restart = new Intent(this, category1.class);
+            restart.putStringArrayListExtra("getAnswers", answers);
+            restart.putStringArrayListExtra("getRightAnswers", rightAnswers);
+            restart.putExtra("warning", wakeUp);
+            restart.putExtra("getPlayerInfo", playerInfo);
+            restart.putExtra("getCategoriesCompleted", categoryCompleted);
+            restart.addFlags(restart.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(restart);
+        } else {
             Collections.sort(checkedOptions);
             Collections.sort(rightAnswers);
-
             if (checkedOptions.equals(rightAnswers)) {
                 correct();
             } else {
                 wrong();
             }
         }
-
     }
 
     //adds points to the total score stored in playerInfo[1]
@@ -223,6 +247,7 @@ public class category1 extends AppCompatActivity {
     //also doesn't forget about the necessary variables needed everywhere
     private void goToCategories() {
         Intent categoryOptions = new Intent(this, Main2Activity.class);
+        categoryOptions.putExtra("warning", wakeUp);
         categoryOptions.putExtra("getPlayerInfo", playerInfo);
         categoryOptions.putExtra("getCategoriesCompleted", categoryCompleted);
         startActivity(categoryOptions);

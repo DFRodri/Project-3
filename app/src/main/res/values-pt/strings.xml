@@ -58,7 +58,7 @@
     <string name="welcomeToHell">Querido humano, bem-vindo à minha humilde armadilha.</string>
     <string name="yes">Sim</string>
     <string name="noName">Nada dizes tu? Então chamar-te-ei simplesmente de… FALHADO!</string>
-    <string name="restart">Recomeçar</string>
+    <string name="restart">Reiniciar</string>
     <string name="theDevil">Cumprimentos do Diabo</string>
     <string name="okayRadio">ESCOLHO-TE A TI!</string>
     <string name="okayCheck">Orgulho, escolho-te a ti!</string>
@@ -66,7 +66,7 @@
     <string name="welcomeToHell3">\*agarra numa cadeira e senta-se\*</string>
     <string name="welcomeToHell4">Vá, que tal um jogo? Eu prometo que será curto.</string>
     <string name="welcomeToHell5">E gostarás do seu fim:</string>
-    <string name="welcomeToHell6">" - Perder significa que que fico com a tua alma."</string>
+    <string name="welcomeToHell6">" - Perder significa que fico com a tua alma."</string>
     <string name="welcomeToHell7">" - Ganhar\&#8230; bem, acho que posso deixar-te viver mais um pouco."</string>
     <string name="welcomeToHell8">Já agora, querido jogador,</string>
     <string name="winState1">Parabéns,</string>
@@ -75,4 +75,7 @@
     <string name="winState3">do teu corpo é servido ao Diabo como refeição.</string>
     <string name="winState4">E tu, meu amigo, morreste de toda essa tamanha dor.</string>
     <string name="winState5">FIM.</string>
+    <string name="wakeUpPlayer">Nada é sempre algo mas\&#8230; onde está a resposta?</string>
+    <string name="angryDevil">Seu filho de 30 Marias! Mas tu queres mesmo morrer?</string>
+    <string name="devilShot">Último aviso!</string>
 </resources>

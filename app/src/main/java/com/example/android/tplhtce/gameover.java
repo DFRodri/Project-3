@@ -27,7 +27,9 @@ public class gameover extends AppCompatActivity {
         Toast.makeText(this, getString(R.string.noToCheaters), Toast.LENGTH_SHORT).show();
     }
 
-    public void restart(View view){
+    //If the player wants to try again from zero
+    //NOTE FROM THE DEVIL: Please, do it
+    public void restart(View view) {
 
         Intent restart = new Intent(this, MainActivity.class);
         startActivity(restart);

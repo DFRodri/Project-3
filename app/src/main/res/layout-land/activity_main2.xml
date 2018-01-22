@@ -73,8 +73,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/border"
                 android:layout_marginTop="@dimen/buttonMargin"
+                android:background="@drawable/border"
                 android:gravity="center">
 
                 <TextView
@@ -126,21 +126,37 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/question_view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/clearSquare"
-        android:gravity="center"
-        android:padding="@dimen/buttonMarginXL"
-        android:text="@string/categoryQuestion"
-        android:textColor="@color/textColor2"
-        android:textSize="@dimen/textSize" />
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/question_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/clearSquare"
+            android:gravity="center"
+            android:padding="@dimen/buttonMarginXL"
+            android:text="@string/categoryQuestion"
+            android:textColor="@color/textColor2"
+            android:textSize="@dimen/textSize" />
+
+        <ImageButton
+            android:layout_width="@dimen/restartButton"
+            android:layout_height="@dimen/restartButton"
+            android:onClick="restart"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/border_retry_left"
+            android:foreground="@drawable/retrybutton" />
+
+    </RelativeLayout>
 
     <LinearLayout
-        android:baselineAligned="false"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:baselineAligned="false"
         android:gravity="center">
 
         <LinearLayout

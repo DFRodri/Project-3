@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:gravity="center"
-        android:lines="6"
+        android:lines="7"
         android:paddingEnd="@dimen/normalMargin"
         android:paddingLeft="@dimen/normalMargin"
         android:paddingRight="@dimen/normalMargin"

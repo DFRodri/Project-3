@@ -63,7 +63,7 @@ public class winner extends AppCompatActivity {
 
     }
 
-    //If the player wants to try again
+    //If the player wants to try again from zero
     //NOTE FROM THE DEVIL: Please, do it
     public void restart(View view) {
 

@@ -13,6 +13,7 @@ public class category2 extends AppCompatActivity {
 
     //global variables used in this activity
     String pressedAnswer;
+    int wakeUp;
 
     //global variables passed between activities
     String rightAnswerButton;
@@ -26,9 +27,10 @@ public class category2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category2);
 
-        //grabs playerInfo, CategoryCompleted, question, answers and right answers from
+        //grabs playerInfo, CategoryCompleted, question, answers, warning joke and right answers from
         //MainActivity.java to create most of the info displayed in the screen
         answers = getIntent().getStringArrayListExtra("getAnswers");
+        wakeUp = getIntent().getIntExtra("warning", 0);
         rightAnswerButton = getIntent().getStringExtra("getRightAnswer");
         playerInfo = getIntent().getStringArrayExtra("getPlayerInfo");
         categoryCompleted = getIntent().getIntArrayExtra("getCategoriesCompleted");
@@ -210,6 +212,7 @@ public class category2 extends AppCompatActivity {
     //also doesn't forget about the necessary variables needed everywhere
     private void goToCategories() {
         Intent categoryOptions = new Intent(this, Main2Activity.class);
+        categoryOptions.putExtra("warning", wakeUp);
         categoryOptions.putExtra("getPlayerInfo", playerInfo);
         categoryOptions.putExtra("getCategoriesCompleted", categoryCompleted);
         startActivity(categoryOptions);

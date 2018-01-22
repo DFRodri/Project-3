@@ -50,7 +50,7 @@
     <dimen name="sliceSizeM">50dp</dimen>
 
     <!--Button's Margin, Padding & Size-->
-    <dimen name="buttonMargin">5dp</dimen>
+    <dimen name="buttonMargin">4dp</dimen>
     <dimen name="buttonMarginXL">8dp</dimen>
     <dimen name="buttonMarginXXL">28dp</dimen>
     <dimen name="buttonRestart">28dp</dimen>
@@ -60,5 +60,8 @@
     <dimen name="buttonLandSize">90dp</dimen>
 
     <dimen name="imageButtonBoxSize">28dp</dimen>
+
+    <!--Restart Button-->
+    <dimen name="restartButton">40dp</dimen>
 
 </resources>

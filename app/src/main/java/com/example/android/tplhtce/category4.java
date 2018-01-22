@@ -14,6 +14,7 @@ public class category4 extends AppCompatActivity {
     //global variables used in this activity
     int pressedAnswer;
     int rightAnswerImageButton;
+    int wakeUp;
 
     //global variables passed between activities
     String question;
@@ -26,10 +27,11 @@ public class category4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category4);
 
-        //grabs playerInfo, CategoryCompleted, question, answers and right answers from
+        //grabs playerInfo, CategoryCompleted, question, answers, warning joke and right answers from
         //MainActivity.java to create most of the info displayed in the screen
         //rightAnswer is converted from a String to an int because we need the resource identifier instead of a phrase (string)
         question = getIntent().getStringExtra("getQuestion");
+        wakeUp = getIntent().getIntExtra("warning", 0);
         answers = getIntent().getIntegerArrayListExtra("getAnswers");
         playerInfo = getIntent().getStringArrayExtra("getPlayerInfo");
         categoryCompleted = getIntent().getIntArrayExtra("getCategoriesCompleted");
@@ -205,6 +207,7 @@ public class category4 extends AppCompatActivity {
     //also doesn't forget about the necessary variables needed everywhere
     private void goToCategories() {
         Intent categoryOptions = new Intent(this, Main2Activity.class);
+        categoryOptions.putExtra("warning", wakeUp);
         categoryOptions.putExtra("getPlayerInfo", playerInfo);
         categoryOptions.putExtra("getCategoriesCompleted", categoryCompleted);
         startActivity(categoryOptions);
