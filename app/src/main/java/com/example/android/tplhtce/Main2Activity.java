@@ -10,6 +10,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import static android.content.Intent.FLAG_ACTIVITY_NO_ANIMATION;
+
 public class Main2Activity extends AppCompatActivity {
 
     //global variables used in this activity
@@ -107,7 +109,8 @@ public class Main2Activity extends AppCompatActivity {
     //each method grabs a set of question plus four possible answers and shuffles the answers based on the value decided in playerInfo[2]
     //to make it a bit harder to guess the right one in the first attempts
     //Then it passes that along the player name, current points, and categories cleared (or not) to another activity
-    //NOTE: I know that this could be done here without any extra activity (you can code buttons in pure java after all) but knowledge is short to do it properly as it should for yesterday
+    //NOTE: I know that this could be done here without any extra activity (you can code buttons in pure java after all and even add every single class to a single file)
+    //but knowledge is short to do it flawless as it should for yesterday
 
 
     public void getCategory0(View view) {
@@ -373,6 +376,15 @@ public class Main2Activity extends AppCompatActivity {
         }
     }
 
+    //Who added this in here??
+    //"Not me" - The Devil
+    public void getCategorySecret(View view) {
+        Intent realWinScreenGame = new Intent(this, categorySecret.class);
+        realWinScreenGame.putExtra("getPlayerInfo", playerInfo);
+        startActivity(realWinScreenGame);
+
+    }
+
     //If the player wants to try again from zero
     //NOTE FROM THE DEVIL: Please, do it
     public void restart(View view) {
@@ -386,7 +398,7 @@ public class Main2Activity extends AppCompatActivity {
         Intent restart = new Intent(this,Main2Activity.class);
         restart.putExtra("getPlayerInfo", playerInfo);
         restart.putExtra("getCategoriesCompleted", categoryCompleted);
-        restart.addFlags(restart.FLAG_ACTIVITY_NO_ANIMATION);
+        restart.addFlags(FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(restart);
     }
 

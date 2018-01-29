@@ -23,6 +23,7 @@
         <activity android:name=".category4" />
         <activity android:name=".gameover" />
         <activity android:name=".winner" />
+        <activity android:name=".categorySecret"></activity>
     </application>
 
 </manifest>

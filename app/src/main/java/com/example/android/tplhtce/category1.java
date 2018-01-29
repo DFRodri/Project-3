@@ -12,6 +12,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import static android.content.Intent.FLAG_ACTIVITY_NO_ANIMATION;
+
 public class category1 extends AppCompatActivity {
 
     //global variables used in this activity
@@ -132,26 +134,30 @@ public class category1 extends AppCompatActivity {
             case R.id.labelA:
                 if (checked)
                     checkedOptions.add(answers.get(1));
-                else
+                else if (!checkedOptions.isEmpty()) {
                     checkedOptions.remove(answers.get(1));
+                }
                 break;
             case R.id.labelB:
                 if (checked)
                     checkedOptions.add(answers.get(2));
-                else
+                else if (!checkedOptions.isEmpty()) {
                     checkedOptions.remove(answers.get(2));
+                }
                 break;
             case R.id.labelC:
                 if (checked)
                     checkedOptions.add(answers.get(3));
-                else
+                else if (!checkedOptions.isEmpty()) {
                     checkedOptions.remove(answers.get(3));
+                }
                 break;
             case R.id.labelD:
                 if (checked)
                     checkedOptions.add(answers.get(4));
-                else
+                else if (!checkedOptions.isEmpty()) {
                     checkedOptions.remove(answers.get(4));
+                }
                 break;
 
         }
@@ -188,8 +194,9 @@ public class category1 extends AppCompatActivity {
             restart.putExtra("warning", wakeUp);
             restart.putExtra("getPlayerInfo", playerInfo);
             restart.putExtra("getCategoriesCompleted", categoryCompleted);
-            restart.addFlags(restart.FLAG_ACTIVITY_NO_ANIMATION);
+            restart.addFlags(FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(restart);
+            overridePendingTransition(0,0);
         } else {
             Collections.sort(checkedOptions);
             Collections.sort(rightAnswers);

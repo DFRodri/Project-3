@@ -139,29 +139,48 @@
             android:layout_height="wrap_content"
             android:background="@color/clearSquare"
             android:gravity="center"
+            android:text=""
             android:padding="@dimen/buttonMarginXL"
-            android:text="@string/categoryQuestion"
             android:textColor="@color/textColor2"
             android:textSize="@dimen/textSize" />
 
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:id="@+id/categorySecret"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/restartButton"
+            android:layout_marginStart="@dimen/restartButton"
+            android:layout_marginEnd="@dimen/restartButton"
+            android:layout_marginLeft="@dimen/restartButton"
+            android:layout_marginRight="@dimen/restartButton"
+            android:background="@color/clearSquare"
+            android:layout_centerVertical="true"
+            android:onClick="getCategorySecret"
+            android:text="@string/categoryQuestion"
+            android:textColor="@color/textColor2"
+            android:textSize="@dimen/textSizeM" />
+
         <ImageButton
+            android:id="@+id/restartButton"
             android:layout_width="@dimen/restartButton"
             android:layout_height="@dimen/restartButton"
-            android:onClick="restart"
-            android:background="@drawable/border_retry_right"
-            android:foreground="@drawable/retrybutton"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true" />
+            android:layout_centerVertical="true"
+            android:background="@drawable/border_retry_right"
+            android:foreground="@drawable/retrybutton"
+            android:onClick="restart" />
 
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="@dimen/buttonMarginXL"
         android:orientation="vertical"
-        android:paddingTop="@dimen/buttonMargin">
+        android:paddingTop="@dimen/buttonMargin"
+        android:scrollbars="none">
 
         <Button
             android:id="@+id/categoryA"

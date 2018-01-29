@@ -38,4 +38,22 @@
         android:text="@string/restart"
         android:textStyle="italic|bold" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/buttonRestart"
+        android:layout_centerVertical="true"
+        android:gravity="end"
+        android:layout_toRightOf="@id/restartButton"
+        android:layout_toEndOf="@id/restartButton"
+        android:paddingEnd="@dimen/normalMargin"
+        android:paddingLeft="@dimen/normalMargin"
+        android:paddingRight="@dimen/normalMargin"
+        android:paddingStart="@dimen/normalMargin"
+        android:text="@string/winState5"
+        android:textColor="@color/textColor2"
+        android:textSize="@dimen/textSize"
+        android:textStyle="bold" />
+
 </RelativeLayout>

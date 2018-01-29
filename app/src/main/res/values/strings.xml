@@ -161,9 +161,64 @@
     <string name="q4_4C" translatable="false">Akroma\'s Memorial</string>
     <string name="q4_4D" translatable="false">Ancient Den</string>
 
+    <!--Secret Category (HORY SHIT! YOU FOUND ME!)-->
+    <string name="secret">HELLO!</string>
+
+    <string name="eins" translatable="false">ichi</string>
+    <string name="zwei" translatable="false">ni</string>
+    <string name="drei" translatable="false">san</string>
+    <string name="vier" translatable="false">shi</string>
+    <string name="funf" translatable="false">go</string>
+    <string name="sechs" translatable="false">ne</string>
+    <string name="sieben" translatable="false">est</string>
+    <string name="acht" translatable="false">pas</string>
+
+    <!--Secret Solution: 2,7,3,8,3,5,4,4,1,8-->
+
+    <string name="secretStart">Hey, what are you doing here?</string>
+    <string name="secretBegin">How did you\&#8230;</string>
+
+    <string name="secretEins">Are you trying to\&#8230;</string>
+    <string name="secretZwei">No, it can\'t be.</string>
+
+    <string name="secretDrei">Stop! You can\'t!</string>
+    <string name="secretVier">Whatever, you will never\ndecipher the phrase.</string>
+
+    <string name="secretFunf">Phrase? I mean\&#8230; code.</string>
+    <string name="secretSechs">By the way, how did you\nfound my real lair?</string>
+
+    <string name="secretSieben">Hold on, we can negotiate.</string>
+    <string name="secretAcht">JUST KIDDING! SUCKER!</string>
+
+    <string name="secretNeun">I mean\&#8230; Do you want some cookies?</string>
+    <string name="secretZehn">We, in the dark side, have tons.\nAnd always fresh!</string>
+
+    <string name="secretElf">No?</string>
+    <string name="secretZwolf">But it\'s with chocolate chips!!</string>
+
+    <string name="secretDreizehn">What if I add a cat?</string>
+    <string name="secretVierzehn">You like cats, right?</string>
+
+    <string name="secretFunfzehn">No? What about a dog?</string>
+    <string name="secretSechzehn">Or even two? Not enough?</string>
+
+    <string name="secretSiebzehn">Then what about infinite power?</string>
+    <string name="secretAchtzehn">Not enough?! You want more?!</string>
+
+    <string name="secretSemiFinal" translatable="false">NIEN! ICH BIN STRONG!</string>
+    <string name="secretFinal" translatable="false">DIE REICH! SCHEISSE!</string>
+
+    <string name="secretSemiError">YES! YOU GOT IT WRONG!\nMWAHAHAHAHAHA!</string>
+    <string name="secretError">FEEL MY WRATH!\nBURN IN MY BED! IN MY LAIR!</string>
+
+    <string name="finalScore0">Congratulations,</string>
+    <string name="finalScore1">You achieved</string>
+    <string name="finalScore2">points!</string>
+    <string name="finalScore3">NOTHING!</string>
+
     <!--Empty answers aren't good, they're will make players get undesirable game overs-->
     <string name="wakeUpPlayer">Nothing is always something but\&#8230; where is the answer?</string>
-    <string name="angryDevil">YOU SON OF A B!"#$%! Do you to die?</string>
+    <string name="angryDevil">YOU SON OF A TOASTED TOAST! Do you want to die?</string>
     <string name="devilShot">Final Warning!</string>
 
 </resources>

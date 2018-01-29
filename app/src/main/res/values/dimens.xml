@@ -63,5 +63,9 @@
 
     <!--Restart Button-->
     <dimen name="restartButton">40dp</dimen>
+    <dimen name="restartButtonXL">80dp</dimen>
+
+    <!--Secret Buttons-->
+    <dimen name="sizeHV">90dp</dimen>
 
 </resources>

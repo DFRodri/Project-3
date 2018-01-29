@@ -56,7 +56,6 @@ public class winner extends AppCompatActivity {
             winning += (100 - remainingBody) + "% " + getString(R.string.winState3) + "\n";
             winning += getString(R.string.winState4) + "\n";
         }
-        winning += "\n" + getString(R.string.winState5);
 
         TextView congratulations = this.findViewById(R.id.congratulations);
         congratulations.setText(winning);

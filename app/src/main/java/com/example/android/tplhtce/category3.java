@@ -8,7 +8,10 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.util.ArrayList;
+
+import static android.content.Intent.FLAG_ACTIVITY_NO_ANIMATION;
 
 public class category3 extends AppCompatActivity {
 
@@ -127,19 +130,19 @@ public class category3 extends AppCompatActivity {
             case R.id.labelA:
                 if (checked)
                     pressedAnswer = answers.get(1);
-                    break;
+                break;
             case R.id.labelB:
                 if (checked)
                     pressedAnswer = answers.get(2);
-                    break;
+                break;
             case R.id.labelC:
                 if (checked)
                     pressedAnswer = answers.get(3);
-                    break;
+                break;
             case R.id.labelD:
                 if (checked)
                     pressedAnswer = answers.get(4);
-                    break;
+                break;
         }
 
     }
@@ -170,11 +173,12 @@ public class category3 extends AppCompatActivity {
             Intent restart = new Intent(this, category3.class);
             restart.putStringArrayListExtra("getAnswers", answers);
             restart.putExtra("getRightAnswer", rightAnswerCheck);
-            restart.putExtra("warning",wakeUp);
+            restart.putExtra("warning", wakeUp);
             restart.putExtra("getPlayerInfo", playerInfo);
             restart.putExtra("getCategoriesCompleted", categoryCompleted);
-            restart.addFlags(restart.FLAG_ACTIVITY_NO_ANIMATION);
+            restart.addFlags(FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(restart);
+            overridePendingTransition(0,0);
         } else {
             if (pressedAnswer.equals(rightAnswerCheck)) {
                 correct();
