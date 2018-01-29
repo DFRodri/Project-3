@@ -18,10 +18,10 @@ public class categorySecret extends AppCompatActivity {
     //other global variables passed between activities
     String[] playerInfo = new String[3];
 
-    //The following global variables are used to make rotation make its magic
+    //the following global variables are used to make rotation make its magic
     private static final String ANSWER_ORDER = "answerOrder";
-    //private static final String ANSWER = "answerSaved";
 
+    //besides making rotation do its magic, they're also global variables used in this activity
     private int answerOrder;
     private int[] answer = new int[10];
 
@@ -34,13 +34,17 @@ public class categorySecret extends AppCompatActivity {
         //saves the number of keys pressed until now
         savedInstanceState.putInt("answerOrder", answerOrder);
 
-        //saves the sequence of keys pressed until now
-        //savedInstanceState.putIntArray("answerSaved", answer);
+        //saves the sequence of keys pressed until now into a string to be able to call it later properly
+        //each string key is different because of the if() being used, different strings of the same name can be saved and reloaded due to that
+        //it's close to an array, what we need here, but it only has one single index and works with constant updates
+        //at least from what I know and understand, my knowledge is sort of limited in this particular case
         for (int i = 0; i < answer.length; i++)
         {
             String ANSWER = "answerSaved" + Integer.toString(i);
             savedInstanceState.putInt(ANSWER, answer[i]);
         }
+        //NOTE: I know that putIntArray() exists but it asked me the impossible (a String key where I can't have one...)
+        //so a practical solution was found and adapted as needed
 
     }
 
@@ -54,13 +58,15 @@ public class categorySecret extends AppCompatActivity {
         answerOrder = savedInstanceState.getInt("answerOrder");
 
         //reloads "the sequence of keys pressed until now" saved before
-        //answer = savedInstanceState.getIntArray("answerSaved");
+        //uses the same concept of the onSavedInstanceState()
         for (int i = 0; i < answer.length; i++)
         {
             String ANSWER = "answerSaved" + Integer.toString(i);
             answer[i] = savedInstanceState.getInt(ANSWER, answer[i]);
         }
-
+        //this is here because we need to make the activity load a TextView according the number saved in answerOrder
+        //if we don't, we will get the string referenced in the xml when we rotate our smartphone
+        //until a key is pressed and it decides to update everything properly
         submitAnswer();
 
     }
@@ -71,12 +77,19 @@ public class categorySecret extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ignoremeplease);
 
+        //this is just here because we need the name of the player saved in playerInfo[0]
+        //and the points saved in playerInfo[1]
         playerInfo = getIntent().getStringArrayExtra("getPlayerInfo");
 
     }
 
-    //getSecret<number> - Methods of the keys pressed
+    //getSecret<number> - One method for every key pressed
 
+    //step 1 - saves the key pressed in the place our counter says; counter starts with 0
+    //step 2 - increments our counter by one to make possible "step 1"
+    //step 3 - calls submitAnswer() to update the text
+    //when it reaches 10, the game ends, display the final score along the name of the player, and adds a restart button
+    //step 3 also beautifies a bit the screen here and there
     public void getSecretOne(View view) {
 
         answer[answerOrder] = 1;
@@ -149,7 +162,7 @@ public class categorySecret extends AppCompatActivity {
 
     }
 
-    //Changes the info displayed on the screen and checks for the solution decided
+    //Changes the info displayed on the screen (text) and checks for the solution decided
     //Also controls the restart button
     public void submitAnswer() {
 
@@ -212,7 +225,7 @@ public class categorySecret extends AppCompatActivity {
             Button eight = this.findViewById(R.id.eighth);
             eight.setVisibility(View.INVISIBLE);
 
-            //Winning toasts are here
+            //Winning toasts are here... if you win
             //NOTE: Yes, there is german in here but not for that reason, silly.
             //It's here because of Major Alvega, an old Portuguese tv show (google it; be aware that some results may be in Portuguese)
             //No, not the comics. Although it's highly based on it!
