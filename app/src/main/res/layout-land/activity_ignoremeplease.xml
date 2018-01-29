@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.tplhtce.categorySecret"
+    tools:ignore="ContentDescription">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/reallair"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
+
+    <Button
+        android:id="@+id/first"
+        android:layout_width="@dimen/sizeHV"
+        android:layout_height="@dimen/sizeHV"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/normalMargin"
+        android:onClick="getSecretOne"
+        android:text="@string/sieben" />
+
+    <Button
+        android:id="@+id/second"
+        android:layout_width="@dimen/sizeHV"
+        android:layout_height="@dimen/sizeHV"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/normalMargin"
+        android:onClick="getSecretTwo"
+        android:text="@string/eins" />
+
+    <Button
+        android:id="@+id/third"
+        android:layout_width="@dimen/sizeHV"
+        android:layout_height="@dimen/sizeHV"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/normalMargin"
+        android:onClick="getSecretThree"
+        android:text="@string/drei" />
+
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/second"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/textMargin"
+        android:textAlignment="textStart"
+        android:gravity="start"
+        android:layout_toRightOf="@id/fourth"
+        android:layout_toEndOf="@id/fourth"
+        android:text="@string/secretStart"
+        android:textColor="@color/textColor2"
+        android:textSize="@dimen/textSizeM"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/fourth"
+        android:layout_width="@dimen/sizeHV"
+        android:layout_height="@dimen/sizeHV"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/normalMargin"
+        android:onClick="getSecretFour"
+        android:text="@string/sechs" />
+
+    <Button
+        android:id="@+id/restart"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_choice_right"
+        android:layout_centerHorizontal="true"
+        android:padding="@dimen/restartPadding"
+        android:layout_centerVertical="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/normalMargin"
+        android:onClick="getSecretRestart"
+        android:text="@string/restart" />
+
+    <Button
+        android:id="@+id/fifth"
+        android:layout_width="@dimen/sizeHV"
+        android:layout_height="@dimen/sizeHV"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/normalMargin"
+        android:onClick="getSecretFive"
+        android:text="@string/vier" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/seventh"
+        android:layout_centerHorizontal="true"
+        android:layout_toLeftOf="@id/fifth"
+        android:layout_toStartOf="@id/fifth"
+        android:layout_margin="@dimen/textMargin"
+        android:gravity="end"
+        android:text="@string/secretBegin"
+        android:textAlignment="textEnd"
+        android:textColor="@color/textColor2"
+        android:textSize="@dimen/textSizeM"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/sixth"
+        android:layout_width="@dimen/sizeHV"
+        android:layout_height="@dimen/sizeHV"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="@dimen/normalMargin"
+        android:onClick="getSecretSix"
+        android:text="@string/zwei" />
+
+    <Button
+        android:id="@+id/seventh"
+        android:layout_width="@dimen/sizeHV"
+        android:layout_height="@dimen/sizeHV"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/normalMargin"
+        android:onClick="getSecretSeven"
+        android:text="@string/funf" />
+
+    <Button
+        android:id="@+id/eighth"
+        android:layout_width="@dimen/sizeHV"
+        android:layout_height="@dimen/sizeHV"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/normalMargin"
+        android:onClick="getSecretEight"
+        android:text="@string/acht" />
+
+</RelativeLayout>
