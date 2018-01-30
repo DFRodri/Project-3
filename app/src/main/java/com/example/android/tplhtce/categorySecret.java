@@ -1,6 +1,8 @@
 package com.example.android.tplhtce;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,30 +20,40 @@ public class categorySecret extends AppCompatActivity {
     //other global variables passed between activities
     String[] playerInfo = new String[3];
 
-    //the following global variables are used to make rotation make its magic
+    //the following global variable is used to store the number of keys pressed until the rotation happens
     private static final String ANSWER_ORDER = "answerOrder";
 
-    //besides making rotation do its magic, they're also global variables used in this activity
-    private int answerOrder;
-    private int[] answer = new int[10];
+    //besides helping rotation do its magic, they're also global variables used in this activity
+    int answerOrder;
+    int[] answer = new int[10];
+    private MediaPlayer mp;
 
     //saves the important stuff to use when the screen rotates, before the onDestroy() happens
     //more info here: https://developer.android.com/guide/components/activities/activity-lifecycle.html
     @Override
-    protected void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        //to prevent an audio from restart when screen rotates, the following checks its position and if it's playing and saves both conditions
+        //to reload it onRestoreInstanceState()
+        outState.putInt("Position", mp.getCurrentPosition());
+        outState.putBoolean("isPlaying", mp.isPlaying());
+
+        //it also pauses the audio to continue where it stopped
+        if (mp.isPlaying()) {
+            mp.pause();
+        }
 
         //saves the number of keys pressed until now
-        savedInstanceState.putInt("answerOrder", answerOrder);
+        outState.putInt("answerOrder", answerOrder);
 
         //saves the sequence of keys pressed until now into a string to be able to call it later properly
         //each string key is different because of the if() being used, different strings of the same name can be saved and reloaded due to that
         //it's close to an array, what we need here, but it only has one single index and works with constant updates
         //at least from what I know and understand, my knowledge is sort of limited in this particular case
-        for (int i = 0; i < answer.length; i++)
-        {
+        for (int i = 0; i < answer.length; i++) {
             String ANSWER = "answerSaved" + Integer.toString(i);
-            savedInstanceState.putInt(ANSWER, answer[i]);
+            outState.putInt(ANSWER, answer[i]);
         }
         //NOTE: I know that putIntArray() exists but it asked me the impossible (a String key where I can't have one...)
         //so a practical solution was found and adapted as needed
@@ -54,13 +66,17 @@ public class categorySecret extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
+        int position = savedInstanceState.getInt("Position");
+        mp.seekTo(position);
+        if (savedInstanceState.getBoolean("isPlaying"))
+            mp.start();
+
         //recalls the number of keys pressed until now
         answerOrder = savedInstanceState.getInt("answerOrder");
 
         //reloads "the sequence of keys pressed until now" saved before
         //uses the same concept of the onSavedInstanceState()
-        for (int i = 0; i < answer.length; i++)
-        {
+        for (int i = 0; i < answer.length; i++) {
             String ANSWER = "answerSaved" + Integer.toString(i);
             answer[i] = savedInstanceState.getInt(ANSWER, answer[i]);
         }
@@ -81,6 +97,15 @@ public class categorySecret extends AppCompatActivity {
         //and the points saved in playerInfo[1]
         playerInfo = getIntent().getStringArrayExtra("getPlayerInfo");
 
+        mp = MediaPlayer.create(this, R.raw.baranojubai);
+        mp.start();
+
+    }
+
+    //easy (and somewhat fun?) way to prevent people from exploiting the game
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, getString(R.string.thereIsNoEscape), Toast.LENGTH_LONG).show();
     }
 
     //getSecret<number> - One method for every key pressed
@@ -231,6 +256,10 @@ public class categorySecret extends AppCompatActivity {
             //No, not the comics. Although it's highly based on it!
             if (Arrays.equals(answer, rightAnswer)) {
 
+                mp.stop();
+                mp = MediaPlayer.create(this, R.raw.scheisse);
+                mp.start();
+
                 textOne.setText(R.string.secretSemiFinal);
                 textTwo.setText(R.string.secretFinal);
 
@@ -242,6 +271,11 @@ public class categorySecret extends AppCompatActivity {
 
             } else {
 
+                mp.stop();
+                mp = MediaPlayer.create(this, R.raw.mwahaha);
+                mp.start();
+
+                //Or a change on the text displayed if you lose
                 textOne.setText(R.string.secretSemiError);
                 textTwo.setText(R.string.secretError);
 

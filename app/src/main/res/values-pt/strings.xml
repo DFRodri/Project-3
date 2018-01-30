@@ -105,4 +105,5 @@
     <string name="finalScore1">Conseguiste</string>
     <string name="finalScore2">pontos!</string>
     <string name="finalScore3">NADA!</string>
+    <string name="thereIsNoEscape">Bolas, não consigo abrir a porta!\nNão há escapatória possível deste Inferno!</string>
 </resources>

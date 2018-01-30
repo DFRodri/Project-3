@@ -15,10 +15,12 @@ import static android.content.Intent.FLAG_ACTIVITY_NO_ANIMATION;
 public class Main2Activity extends AppCompatActivity {
 
     //global variables used in this activity
+    final static String SECRET = "amazingSecret";
     //Cat was here. Cat was hungry.
 
     //those are also passed between activities
     int wakeUp;
+    int secret;
     ArrayList<String> answers = new ArrayList<>(5);
     ArrayList<Integer> answersD = new ArrayList<>(4);
     ArrayList<String> rightAnswers = new ArrayList<>(3);
@@ -27,6 +29,29 @@ public class Main2Activity extends AppCompatActivity {
     String rightAnswerButton;
     String rightAnswerCheck;
     String questionD;
+
+    //saves the important stuff to use when the screen rotates, before the onDestroy() happens
+    //more info here: https://developer.android.com/guide/components/activities/activity-lifecycle.html
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        //saves the boxes checked by the player
+        outState.putInt("amazingSecret", secret);
+
+    }
+
+    //reloads the important saved stuff when the screen rotated, after the onDestroy() happens
+    //more info here: https://developer.android.com/guide/components/activities/activity-lifecycle.html
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        //reloads the boxes checked by the player
+        //if this doesn't happen... the activity presumes that we pressed nothing after a rotation
+        secret = savedInstanceState.getInt("amazingSecret");
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -175,7 +200,7 @@ public class Main2Activity extends AppCompatActivity {
 
             //Time to drop the ball into the next category with this long pass full of putSomethingOnTheOtherSide
             Intent category0 = new Intent(this, category1.class);
-            category0.putExtra("warning",wakeUp);
+            category0.putExtra("warning", wakeUp);
             category0.putStringArrayListExtra("getAnswers", answers);
             category0.putStringArrayListExtra("getRightAnswers", rightAnswers);
             category0.putExtra("getPlayerInfo", playerInfo);
@@ -242,7 +267,7 @@ public class Main2Activity extends AppCompatActivity {
 
             //Time to drop the ball into the next category with this long pass full of putSomethingOnTheOtherSide
             Intent category1 = new Intent(this, category2.class);
-            category1.putExtra("warning",wakeUp);
+            category1.putExtra("warning", wakeUp);
             category1.putStringArrayListExtra("getAnswers", answers);
             category1.putExtra("getRightAnswer", rightAnswerButton);
             category1.putExtra("getPlayerInfo", playerInfo);
@@ -309,7 +334,7 @@ public class Main2Activity extends AppCompatActivity {
 
             //Time to drop the ball into the next category with this long pass full of putSomethingOnTheOtherSide
             Intent category2 = new Intent(this, category3.class);
-            category2.putExtra("warning",wakeUp);
+            category2.putExtra("warning", wakeUp);
             category2.putStringArrayListExtra("getAnswers", answers);
             category2.putExtra("getRightAnswer", rightAnswerCheck);
             category2.putExtra("getPlayerInfo", playerInfo);
@@ -367,7 +392,7 @@ public class Main2Activity extends AppCompatActivity {
 
             //Time to drop the ball into the next category with this long pass full of putSomethingOnTheOtherSide
             Intent category3 = new Intent(this, category4.class);
-            category3.putExtra("warning",wakeUp);
+            category3.putExtra("warning", wakeUp);
             category3.putExtra("getQuestion", questionD);
             category3.putIntegerArrayListExtra("getAnswers", answersD);
             category3.putExtra("getPlayerInfo", playerInfo);
@@ -379,10 +404,14 @@ public class Main2Activity extends AppCompatActivity {
     //Who added this in here??
     //"Not me" - The Devil
     public void getCategorySecret(View view) {
-        Intent realWinScreenGame = new Intent(this, categorySecret.class);
-        realWinScreenGame.putExtra("getPlayerInfo", playerInfo);
-        startActivity(realWinScreenGame);
 
+        if (secret < 2) {
+            secret += 1;
+        } else {
+            Intent realWinScreenGame = new Intent(this, categorySecret.class);
+            realWinScreenGame.putExtra("getPlayerInfo", playerInfo);
+            startActivity(realWinScreenGame);
+        }
     }
 
     //If the player wants to try again from zero
@@ -395,7 +424,7 @@ public class Main2Activity extends AppCompatActivity {
         categoryCompleted[3] = 0;
         playerInfo[1] = "0";
 
-        Intent restart = new Intent(this,Main2Activity.class);
+        Intent restart = new Intent(this, Main2Activity.class);
         restart.putExtra("getPlayerInfo", playerInfo);
         restart.putExtra("getCategoriesCompleted", categoryCompleted);
         restart.addFlags(FLAG_ACTIVITY_NO_ANIMATION);

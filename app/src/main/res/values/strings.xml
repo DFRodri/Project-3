@@ -59,6 +59,7 @@
 
     <!--If someone tries to cheat-->
     <string name="noToCheaters">Are you trying to cheat?</string>
+    <string name="thereIsNoEscape">Damn, I can\'t open the door!\nThere is no escape available from this Hell!</string>
 
     <!--History Questions-->
     <string name="q1_1">This 400,000 years old fossil was found in\&#8230;</string>

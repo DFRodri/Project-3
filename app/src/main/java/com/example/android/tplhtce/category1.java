@@ -16,15 +16,43 @@ import static android.content.Intent.FLAG_ACTIVITY_NO_ANIMATION;
 
 public class category1 extends AppCompatActivity {
 
+    //the following global variable is used to store the boxes checked before the screen rotates
+    private static final String BOXES_CHECKED = "boxesChecked";
+
     //global variables used in this activity
-    ArrayList<String> checkedOptions = new ArrayList<>(4);
     ArrayList<String> answers = new ArrayList<>(5);
     ArrayList<String> rightAnswers = new ArrayList<>(3);
     int wakeUp;
 
+    //this one, besides being global and used in this activity, also is used to make magic with rotations
+    ArrayList<String> checkedOptions = new ArrayList<>(4);
+
     //global variables passed between activities
     int[] categoryCompleted = new int[4];
     String[] playerInfo = new String[3];
+
+    //saves the important stuff to use when the screen rotates, before the onDestroy() happens
+    //more info here: https://developer.android.com/guide/components/activities/activity-lifecycle.html
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        //saves the boxes checked by the player
+        outState.putStringArrayList("boxesChecked", checkedOptions);
+
+    }
+
+    //reloads the important saved stuff when the screen rotated, after the onDestroy() happens
+    //more info here: https://developer.android.com/guide/components/activities/activity-lifecycle.html
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        //reloads the boxes checked by the player
+        //if this doesn't happen... the activity presumes that we pressed nothing after a rotation
+        checkedOptions = savedInstanceState.getStringArrayList("boxesChecked");
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

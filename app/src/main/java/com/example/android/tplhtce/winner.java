@@ -12,6 +12,7 @@ public class winner extends AppCompatActivity {
 
     //global variables used in this activity
     String[] playerInfo = new String[3];
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +23,16 @@ public class winner extends AppCompatActivity {
         playerInfo = getIntent().getStringArrayExtra("getPlayerInfo");
 
         //plays the *cough* not really *cough* victory song!
-        MediaPlayer win = MediaPlayer.create(this,R.raw.mwahaha);
-        win.start();
-        //NOTE - there isn't a -- victory.close() -- on purpose
-        //Adding one would kill the laugh.mp3 too early
+        mp = MediaPlayer.create(this,R.raw.mwahaha);
+        mp.start();
+        //NOTE - there isn't an easy way to stop the audio on purpose
+        //adding one would kill the audio too early and ruin the fun
         //overlapping it when you rotate the screen is fun
-        //drama created goes up over 9000!
-        //I know that chances to this specific action happen are scarce but I loved the effect while testing it
+        //drama created goes up over 9000!!
+        //I know that chances to this specific action happen are scarce from the POV of a normal user but... I liked it while testing things
+        //at least the audio is killed when you press restart (if you don't overlap it ofc; then things go into a weird mode on and it plays until the end)
 
+        //calls the "winning" text display method
         displayWin();
 
     }
@@ -65,6 +68,13 @@ public class winner extends AppCompatActivity {
     //If the player wants to try again from zero
     //NOTE FROM THE DEVIL: Please, do it
     public void restart(View view) {
+
+        //to release/stop the music player before restarting the quiz game once again
+        if (mp != null) {
+            mp.stop();
+            mp.reset();
+            mp.release();
+        }
 
         Intent restart = new Intent(this, MainActivity.class);
         startActivity(restart);
